@@ -1,9 +1,10 @@
-Storage Demo
+Storage Types
 =============
 
-StorageDemo is a Blazor Server application that demonstrates different types of data storage, including structured, semi-structured, and unstructured data. It uses SQLite for structured data and JSON for unstructured data.
+Storage Types is a Blazor Server application that demonstrates different types of data storage, including structured, semi-structured, and unstructured data. It uses SQLite for structured data and JSON for unstructured data.
 
 ## Features
+
 - Displays structured data from an SQLite database.
 - Renders unstructured data (images) from a JSON file.
 - Built with Blazor Server and Dockerized for easy deployment.
