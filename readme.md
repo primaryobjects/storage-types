@@ -3,6 +3,8 @@ Storage Types
 
 Storage Types is a Blazor Server application that demonstrates different types of data storage, including structured, semi-structured, and unstructured data. It uses SQLite for structured data and JSON for unstructured data.
 
+![screenshot of storage types](screenshot.gif)
+
 ## Features
 
 - Displays structured data from an SQLite database.
