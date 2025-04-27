@@ -1,0 +1,33 @@
+﻿<div class="top-row ps-3 navbar navbar-dark">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="">StorageDemo</a>
+    </div>
+</div>
+
+<input type="checkbox" title="Navigation menu" class="navbar-toggler" />
+
+<div class="nav-scrollable" onclick="document.querySelector('.navbar-toggler').click()">
+    <nav class="nav flex-column">
+        <div class="nav-item px-3">
+            <NavLink class="nav-link" href="/" Match="NavLinkMatch.All">
+                <span class="bi bi-house-door-fill-nav-menu" aria-hidden="true"></span> Home
+            </NavLink>
+        </div>
+        <div class="nav-item px-3">
+            <NavLink class="nav-link" href="/structured-data">
+                <span class="bi bi-house-door-fill-nav-menu" aria-hidden="true"></span> Structured Data
+            </NavLink>
+        </div>
+        <div class="nav-item px-3">
+            <NavLink class="nav-link" href="/semi-structured-data">
+                <span class="bi bi-house-door-fill-nav-menu" aria-hidden="true"></span> Semi Structured Data
+            </NavLink>
+        </div>
+        <div class="nav-item px-3">
+            <NavLink class="nav-link" href="/unstructured-data">
+                <span class="bi bi-house-door-fill-nav-menu" aria-hidden="true"></span> Unstructured Data
+            </NavLink>
+        </div>
+    </nav>
+</div>
+

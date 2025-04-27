@@ -1,0 +1,42 @@
+@page "/unstructured-data"
+@rendermode InteractiveServer
+
+<PageTitle>Database Storage Types: Unstructured Data</PageTitle>
+
+<h1>Unstructured Data</h1>
+
+<p>Unstructured data is data that does not have a predefined format or structure. It can include text, images, videos, and other types of data that do not fit neatly into rows and columns. Unstructured data is often stored in file systems or NoSQL databases.</p>
+<p>In this demo, we will explore how to work with unstructured data using file blobs and an external key/value file path lookup table.</p>
+
+<h4>KeyValue Table Schema</h4>
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Key</th>
+            <th>Value</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>FileName</td>
+            <td>FilePath</td>
+        </tr>
+    </tbody>
+</table>
+
+@if (Images == null || !Images.Any())
+{
+    <p>Loading images...</p>
+}
+else
+{
+    <div class="row">
+        @foreach (var image in Images)
+        {
+            <div class="col-md-3 text-center mb-4">
+                <img src="@image.Value" alt="@image.Key" class="img-fluid rounded" />
+                <p>@image.Key</p>
+            </div>
+        }
+    </div>
+}

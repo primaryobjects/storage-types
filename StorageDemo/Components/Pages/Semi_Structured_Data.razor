@@ -1,0 +1,25 @@
+@page "/semi-structured-data"
+@rendermode InteractiveServer
+
+<PageTitle>Database Storage Types: Semi-Structured Data</PageTitle>
+
+<h1>Semi-Structured Data</h1>
+
+<p>Semi-Structured is data that does not conform to a fixed schema but still has some organizational properties. It is often stored in formats like JSON or XML and can be queried using specialized query languages.</p>
+<p>In this demo, we will explore how to work with semi-structured data using Entity Framework Core and a key/value table.</p>
+
+<hr>
+
+<div class="row">
+    <div class="col s12 m6">
+        <div class="card text-white bg-primary mb-3" style="max-width: 36rem;">
+            <div class="card-header">JSON Data</div>
+            <div class="card-body">
+                <h5 class="card-title">Generated JSON</h5>
+                <div>
+                    <textarea id="txtJson" class="form-control" rows="8" cols="100">@JsonData</textarea>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

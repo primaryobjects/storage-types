@@ -1,0 +1,63 @@
+@page "/structured-data"
+@rendermode InteractiveServer
+
+<PageTitle>Database Storage Types: Structured Data</PageTitle>
+
+<h3>Structured Data</h3>
+
+<p>Structured data is data that is organized in a predefined manner, typically in rows and columns. It is often stored in relational databases and can be easily queried using SQL.</p>
+<p>In this demo, we will explore how to work with structured data using Entity Framework Core and SQL Lite.</p>
+
+@if (TableNames == null || !TableNames.Any())
+{
+    <p>No tables found in the database.</p>
+}
+else
+{
+    <h4>Tables in the Database:</h4>
+    <ul>
+        @foreach (var tableName in TableNames)
+        {
+            <li>@tableName</li>
+        }
+    </ul>
+
+    @if (Rows == null)
+    {
+        <p>Loading data...</p>
+    }
+    else if (!Rows.Any())
+    {
+        <p>No data available in the selected table.</p>
+    }
+    else
+    {
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    @foreach (var column in Columns)
+                    {
+                        <th>@column</th>
+                    }
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var row in PagedRows)
+                {
+                    <tr>
+                        @foreach (var cell in row)
+                        {
+                            <td>@cell</td>
+                        }
+                    </tr>
+                }
+            </tbody>
+        </table>
+
+        <div class="d-flex justify-content-between">
+            <button class="btn btn-primary" @onclick="GoToPreviousPage" disabled="@(CurrentPage == 1)">Previous</button>
+            <span>Page @CurrentPage of @TotalPages</span>
+            <button class="btn btn-primary" @onclick="GoToNextPage" disabled="@(CurrentPage == TotalPages)">Next</button>
+        </div>
+    }
+}

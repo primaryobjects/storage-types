@@ -1,0 +1,8 @@
+version: '3.8'
+services:
+  storage:
+    image: ghcr.io/primaryobjects/storage-demo:latest
+    ports:
+      - "8080:80"
+    environment:
+      ENV_VAR_NAME: value
