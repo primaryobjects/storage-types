@@ -14,6 +14,7 @@ namespace StorageDemo.Components.Pages
     private string JsonData = string.Empty;
         [Inject]
         private IJSRuntime? JSRuntime { get; set; }
+        private readonly JsonSerializerOptions jsonSerializer = new() { WriteIndented = true };
 
         protected override void OnInitialized()
         {
@@ -46,13 +47,13 @@ namespace StorageDemo.Components.Pages
             }).ToArray();
 
             // Serialize to JSON
-            JsonData = JsonSerializer.Serialize(jsonData, new JsonSerializerOptions { WriteIndented = true });
+            JsonData = JsonSerializer.Serialize(jsonData, jsonSerializer);
 
             // Refresh the UI
             StateHasChanged();
 
             // Call JavaScript to initialize CodeMirror
-            JSRuntime.InvokeVoidAsync("initializeCodeMirror");
+            JSRuntime?.InvokeVoidAsync("initializeCodeMirror");
         }
     }
 }
